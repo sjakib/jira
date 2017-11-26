@@ -1,0 +1,8 @@
+---
+
+- name: Install jira
+  hosts: jira
+  sudo: yes
+  roles:
+    - { role: oracle-java, tags: [java] }
+    - { role: jira, tags: [jira] }

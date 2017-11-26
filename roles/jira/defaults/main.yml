@@ -1,0 +1,25 @@
+---
+# defaults file for jira
+
+jira_version: 7.5.0
+jira_bitness: 64
+jira_baseurl:   http://www.atlassian.com/software/jira/downloads/binary
+jira_installer: atlassian-jira-software-{{ jira_version }}.tar.gz
+jira_user:      jira
+jira_group:     jira
+jira_gid:   5597
+jira_uid:   5597
+
+jira_dbconnector: postgresql
+jira_tmp:       /tmp
+jira_installto: /apps
+jira_datadir:   /applis/jira-data
+maven_pkg_state: present # present or latest
+jira_home_dir: /apps/jira-home
+jira_db_service_address: test
+jira_db_name: test
+jira_db_username: test
+jira_db_password: test
+jira_catalina: /apps/atlassian/jira-software-{{ jira_version }}-standalone
+jre_home: /usr/java/jdk1.8.0_45/jre/
+

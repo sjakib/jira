@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jira-database-config>
+  <name>defaultDS</name>
+  <delegator-name>default</delegator-name>
+  <database-type>postgres72</database-type>
+  $SCHEMA
+  <jdbc-datasource>
+    <url>jdbc:postgresql://{{ jira_db_service_address }}:5432/{{ jira_db_name }}</url>
+    <driver-class>org.postgresql.Driver</driver-class>
+    <username>{{ jira_db_username }}</username>
+    <password>{{ jira_db_password }}</password>
+    <pool-min-size>20</pool-min-size>
+    <pool-max-size>20</pool-max-size>
+    <pool-max-wait>30000</pool-max-wait>
+    <pool-max-idle>20</pool-max-idle>
+    <pool-remove-abandoned>true</pool-remove-abandoned>
+    <pool-remove-abandoned-timeout>300</pool-remove-abandoned-timeout>
+  </jdbc-datasource>
+</jira-database-config>

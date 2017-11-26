@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  author: sabir JAKIB
+  description: Install Atlassian Jira
+  company: BNP
+  min_ansible_version: 1.9
+
+  platforms:
+  - name: EL
+    versions:
+    - 0.1
+  categories:
+  #- cloud
+  #- cloud:ec2
+  #- cloud:gce
+  #- cloud:rax
+  #- database
+  #- database:nosql
+  #- database:sql
+  - development
+  #- monitoring
+  #- networking
+  #- packaging
+  #- system
+  #- web
+dependencies: []
