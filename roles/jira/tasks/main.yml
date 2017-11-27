@@ -70,7 +70,5 @@
     group: "{{ jira_group }}"
 
 - name: enable service
-  service:
-    name: "jira"
-    enabled: "yes"
+  service: name=jira state=started enabled=yes
   
