@@ -1,4 +1,4 @@
-azure   ansible_ssh_host=hoste  ansible_ssh_user=ansible   ansible_ssh_pass=ansible ansible_sudo_pass=ansible
+azure   ansible_ssh_host=52.166.13.100	 ansible_ssh_user=ansible   ansible_ssh_pass={{ pass }} ansible_sudo_pass={{pass}}
 
 [azure:children]
 jira
