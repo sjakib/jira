@@ -11,7 +11,7 @@
   group: name={{ jira_group }} gid={{ jira_gid }} state=present
 
 - name: Create jira user
-  user: name={{ jira_user }} uid={{ jira_uid }} group={{ jira_group }} shell=/bin/bash state=present
+  user: name={{ jira_user }} uid={{ jira_uid }} group={{ jira_group }} shell=/bin/bash home={{jira_home_dir}} state=present
 
 - name: Create jira install dir
   file: path={{ jira_installto }} state=directory owner={{ jira_user }} group={{ jira_group }} mode=0755
@@ -51,7 +51,8 @@
   tags: install
 
 - name: Ensure logs symlink exists
-  file: src={{ jira_installto }}/atlassian/jira-software-{{ jira_version }}-standalone/logs
+  file:
+        src={{ jira_installto }}/atlassian/jira-software-{{ jira_version }}-standalone/logs
         path=/var/log/jira
         state=link
   tags: install
@@ -71,4 +72,3 @@
 
 - name: enable service
   service: name=jira state=started enabled=yes
-  

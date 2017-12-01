@@ -1,25 +1,71 @@
 ---
-# defaults file for jira
+repository :
+  url : http://s00vl9968061.fr.net.intra:8081/repository/IDO-TEST
 
-jira_version: 7.5.0
-jira_bitness: 64
-jira_baseurl:   http://www.atlassian.com/software/jira/downloads/binary
+server_name :
+app_name : AP1260-jira
+
+jira :
+  version : 7.6.0
+  archive : atlassian-jira-software-{{ jira.version }}.tar.gz
+  user :
+    login : jira
+    group : jira
+    gid : 5597
+    uid : 5597
+    home : /apps/{{ ap_name }}
+    password :
+  database :
+    connector : postgresql
+    port : '{{ db_port }}'
+    schema : '{{ db_name }}'
+    user : '{{db_application_user}}'
+    password : '{{ db_application_password}}'
+  directory :
+      tmp : /tmp
+      log : /apps/log/{{ ap_name }}
+      install : /applis/jira
+  wizard :
+    baseurl :
+      key : 'jira.baseurl'
+      value : 'http://${server_name}:8080'
+    title :
+      key : 'jira.title'
+      value:  'TAAS'
+    sid:
+      key : 'jira.sid.key'
+      value : 'BFWW-HPQH-ODXR-V32F'
+    serverid :
+      key : 'com.atlassian.analytics.client.configuration.serverid'
+      value : 'BFWW-HPQH-ODXR-V32F'
+    license :
+        id : '1000'
+        value : 'AAABdg0ODAoPeNp9UUtvgkAQvvMrSHppDxBB4yshKYU10ihaoNpDL1scdRtkyexi678vr6ZaH8fZne85d0tYqT7fq+ZAbQ2GbXNodlUnjFSzZfSUDQKkW55lgPqExZAKICsmGU8t4kckmAdeSBQ/330AztavAlBYmqE4PJU0lj7dgZXwhOt8D/i42VGW6DHfKZ8MqX6GmucYb6kAl0qwSnnNMLR2S2mEo0MGFaMzm05J4Hj25PeLfGcMD0c4s8Q1Lsi0kL1oIwQsHjzXehotl9p4/jLWZu5boC3a5qj2mCFf5bHUy0ETfC2/KIJekLI9WBJzqNeuV3OhwEs5CouphJSm8ZUsN9yc9djoFLkmnhsSX5sYrV6n0+/2lWKyTl9uEIeSogS01jQRoMxwQ1MmaJUwsu1QcRCq6f+9klp/Udgpd82TEqDIiRky0fTngoiRZRXrsxfYatjIq/f1eR7ehyrZ0ySvtGq/1w5wqdpj8WPcH2c9/wDiSQl4MCwCFBRe7FdyJrZPdAVE5GZXzfJ1lbjQAhRbJBAWTHRjvj97EljJOw5QPClC+A==X02ia'
+
+
+jira_version: 7.6.0
+jira_baseurl:   http://s00vl9968061.fr.net.intra:8081/repository/IDO-TEST
 jira_installer: atlassian-jira-software-{{ jira_version }}.tar.gz
+
 jira_user:      jira
 jira_group:     jira
 jira_gid:   5597
 jira_uid:   5597
-
+# use postgresql or mysql
 jira_dbconnector: postgresql
 jira_tmp:       /tmp
 jira_installto: /apps
 jira_datadir:   /applis/jira-data
-maven_pkg_state: present # present or latest
-jira_home_dir: /apps/jira-home
-jira_db_service_address: test
-jira_db_name: test
-jira_db_username: test
-jira_db_password: test
+jira_home_dir: '/apps/jira-home'
+db_port: '{{ db_port }}'
+db_name: '{{ db_name }}'
+db_application_user: '{{db_application_user}}'
+db_application_password: '{{ db_application_password}}'
+
+##############################################
+# artifacte
+#############################################
+url_username: admin
+url_password: admin123
 jira_catalina: /apps/atlassian/jira-software-{{ jira_version }}-standalone
 jre_home: /usr/java/jdk1.8.0_45/jre/
-
