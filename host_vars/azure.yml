@@ -1,4 +1,4 @@
-iansible_ssh_host: '13.95.67.178' 
+iansible_ssh_host: '52.174.199.21' 
 ansible_ssh_user: ansible
 ansible_ssh_pass:  Jkbstatistique16!
 ansible_sudo_pass: Jkbstatistique16!
